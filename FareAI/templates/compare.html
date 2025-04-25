@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Hello World!</h1>
+<p>Welcome to my first Django project!</p>
+
+<form method="POST" action="{% url 'compare' %}">
+{% csrf_token %}
+<label for= "citySelect" >CITY: </label>
+<select name ="CITY">
+    <option value=" Indore">
+        Indore
+    </option>
+
+</select>
+
+<label for= "sourceSelect" >SOURCE ADDRESS</label>
+<select name ="SA">
+    <option value="{{current_name}}">
+        Rau
+    </option>
+
+</select>
+
+<label for= "citySelect" >CITY: </label>
+<select name ="DA">
+    <option value="RajendraNagar">
+        RajendraNagar
+    </option>
+    <option value="silicon">
+        silicon
+    </option>
+</select>
+
+
+<button type="submit" >Submit</button>
+{% if final_distance is not None %}
+<h2>Distance: {{ final_distance|floatformat:2 }} km</h2>
+{% endif %}
+
+{% if error %}
+<p style="color: red;">{{ error }}</p>
+{% endif %}
+</form>
+</body>
+</html>

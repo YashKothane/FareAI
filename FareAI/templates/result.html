@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>This is the result page</h1>
+<p>Here the transition is working </p>
+
+
+<button type="submit" >Submit</button>
+
+{% if final_distance is not None %}
+<h2>Distance: {{ final_distance|floatformat:2 }} km</h2>
+{% endif %}
+
+{% if error %}
+<p style="color: red;">{{ error }}</p>
+{% endif %}
+</form>
+</body>
+</html>
