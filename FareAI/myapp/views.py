@@ -50,3 +50,5 @@ def result(request):
 def our(final_distance):
   
     ola=(final_distance*10)+30
+
+# I am updating the VIews 
